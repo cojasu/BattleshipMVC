@@ -5,9 +5,7 @@ using System.Web;
 
 namespace BattleshipMVC.Models
 {
-    public class Battleship
+    public class Player
     {
-        Player player;
-        Player computer;
     }
 }

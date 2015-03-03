@@ -1,0 +1,85 @@
+﻿body {
+    background-color: #ecf0f1;
+}
+
+br {
+
+}
+
+.quote img {
+    float: left;
+    border: 5px solid #657dcb;
+    border-radius: 103px;
+    margin-right: 5%;
+    width: 200px;
+    height: 200px;
+}
+
+@media (max-width: 767px) {
+    .quote {
+        text-align: center;
+    }
+
+    .quote img {
+        float: none;
+        margin: 0 auto 0 auto;
+    }
+}
+.network-name {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.banner {
+    padding: 100px 0;
+    color: #f8f8f8;
+    background: url(Images/battleship.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+    .banner h2 {
+        margin: 0;
+        text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+        font-size: 3em;
+    }
+
+    .banner ul {
+        margin-bottom: 0;
+    }
+
+.banner-social-buttons {
+    float: right;
+    margin-top: 0;
+}
+
+@media (max-width:1199px) {
+    ul .banner-social-buttons {
+        float: left;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width:767px) {
+    .banner h2 {
+        margin: 0;
+        text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+        font-size: 3em;
+    }
+
+    ul.banner-social-buttons > li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+        ul.banner-social-buttons > li:last-child {
+            margin-bottom: 0;
+        }
+}
+
+footer {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+}
