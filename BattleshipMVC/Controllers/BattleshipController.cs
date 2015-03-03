@@ -6,11 +6,11 @@ using System.Web.Mvc;
 
 namespace BattleshipMVC.Controllers
 {
-    public class HomeController : Controller
+    public class BattleshipController : Controller
     {
-        
         //
-        // GET: /Home/
+        // GET: /Battleship/
+        
         public ActionResult Index()
         {
             return View();

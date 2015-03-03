@@ -7,5 +7,11 @@ namespace BattleshipMVC.Models
 {
     public class Player
     {
+        UpperBoard upBoard;
+
+        public Player()
+        {
+            upBoard = new UpperBoard();
+        }
     }
 }

@@ -9,5 +9,11 @@ namespace BattleshipMVC.Models
     {
         Player player;
         Player computer;
+
+        public Battleship()
+        {
+            player = new Player();
+            computer = new Player();
+        }
     }
 }
