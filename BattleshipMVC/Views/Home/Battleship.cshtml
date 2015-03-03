@@ -1,5 +1,7 @@
 ﻿@model BattleshipMVC.Models.Battleship
 
+<div class="row">
+    <div class="col-lg-8">
         @using (Html.BeginForm())
         { 
             <table>
@@ -14,3 +16,15 @@
                 }
             </table>
         }
+        </div>
+    <div class="col-lg-2">
+        <ul>
+        @for (int i = 0; i < 5; i++)
+        {
+            <li>
+                Test Ship: @i
+            </li>
+        }
+            </ul>
+    </div>
+</div>

@@ -122,6 +122,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="OpenSans-Regular-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\battleship.jpg" />
     <Content Include="Images\me.jpg" />
@@ -146,6 +147,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Battleship.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="OpenSans-Regular-webfont.eot" />
+    <Content Include="OpenSans-Regular-webfont.ttf" />
+    <Content Include="OpenSans-Regular-webfont.woff" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
