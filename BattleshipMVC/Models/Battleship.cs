@@ -7,12 +7,12 @@ namespace BattleshipMVC.Models
 {
     public class Battleship
     {
-        Player player;
+        Player human;
         Player computer;
 
         public Battleship()
         {
-            player = new Player();
+            human = new Player();
             computer = new Player();
         }
     }
