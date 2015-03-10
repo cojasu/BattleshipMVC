@@ -15,6 +15,10 @@
 
 }
 
+.game {
+    padding-bottom: 50px;
+    padding-top: 20px;
+}
     body > div.container > div > div > div.col-lg-8 > form > table > tbody > tr > td > input[type="button"] {
         background-color: #657dcb;
         width: 75px;
@@ -81,6 +85,13 @@ p{
     background-size: cover;
 }
 
+.fixed {
+    	background-attachment: fixed;
+}
+
+.scrolling {
+    min-height: 100%;
+}
     .banner h2 {
         margin: 0;
         text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
@@ -123,5 +134,14 @@ p{
 
 footer {
     padding: 50px 0;
-    background-color: #f8f8f8;
+    background-color: rgb(40, 40, 40);
 }
+
+.footer-Text {
+    color: white;
+    font-size: 1.3em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+

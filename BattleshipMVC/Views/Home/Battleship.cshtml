@@ -4,6 +4,7 @@
     <div class="col-lg-8">
         @using (Html.BeginForm())
         { 
+            <h2>Make your moves here.</h2>
             <table>
                 @for (int i = 1; i < 11; i++)
                 {
@@ -18,6 +19,35 @@
         }
         </div>
     <div class="col-lg-2">
+        <p>List of ships you've sunk</p>
+        <ul>
+        @for (int i = 0; i < 5; i++)
+        {
+            <li>
+                Test Ship: @i
+            </li>
+        }
+            </ul>
+    </div>
+   <div class="col-lg-8">
+        @using (Html.BeginForm())
+        { 
+            <h2>Your status:</h2>
+            <table>
+                @for (int i = 1; i < 11; i++)
+                {
+                    <tr>
+                       @for (int j = 1; j < 11; j++)
+                       {
+                            <td><input type="button" name="button" value="@i @j" disabled="disabled"/></td>
+                       }
+                    </tr>
+                }
+            </table>
+        }
+        </div>
+    <div class="col-lg-2">
+        <p>List of your sunk ships:</p>
         <ul>
         @for (int i = 0; i < 5; i++)
         {
