@@ -35,6 +35,9 @@
                         <a href="#play">Play</a>
                     </li>
                     <li>
+                        <a href="#design">Design</a>
+                    </li>
+                    <li>
                         <a href="#about">About</a>
                     </li>
                     <li>
@@ -50,6 +53,29 @@
             @Html.Partial("Battleship")
         </div>
     </div>
+
+    <a name="design"></a>
+    <div class="container scrolling">
+        <div class="row">
+            <h1 class="header-center">How the algorithm works</h1>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-4">
+                <h2 class="header-center"><img class="algorithm-icon" src="~/Images/Target.png" /><br />Target</h2>
+                <p class="center">Using probabilities, BattleshipMVC will detect the mathematically optimal tile to hit.</p>
+            </div>
+            <div class="col-lg-4">
+                <h2 class="header-center"><img class="algorithm-icon center" src="~/Images/Hunt.png" /><br />Hunt</h2>
+                <p class="center">Once a hit is confirmed, BattleshipMVC will hunt down the target.</p>
+            </div>
+            <div class="col-lg-4">
+                <h2 class="header-center"><img class="algorithm-icon center" src="~/Images/Repeat.png" /><br />Repeat</h2>
+                <p class="center">BattleshipMVC will continue this process until the enemy has been eliminated.</p>
+            </div>
+        </div>
+    </div>
+    <br />
     <div class="banner fixed"></div>
     <a name="about"></a>
     <div class="container-full scrolling">

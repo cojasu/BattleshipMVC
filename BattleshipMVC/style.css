@@ -52,6 +52,23 @@ p{
     background:#bdc3c7;
 }
 
+.algorithm-icon {
+    max-width: 50%;
+}
+
+.center {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.header-center {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
 .quote img {
     float: left;
     border: 5px solid #657dcb;
@@ -81,7 +98,7 @@ p{
 .banner {
     padding: 100px 0;
     color: #f8f8f8;
-    background: url(Images/battleship.jpg) no-repeat center center;
+    background: url(Images/battleship2.jpg) no-repeat center center;
     background-size: cover;
 }
 
