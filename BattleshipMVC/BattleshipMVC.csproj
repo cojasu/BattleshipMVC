@@ -108,14 +108,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\BattleshipController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Battleship.cs" />
-    <Compile Include="Models\Player.cs" />
-    <Compile Include="Models\UpperBoard.cs" />
+    <Compile Include="Models\Coordinate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -126,7 +124,7 @@
     <Content Include="Images\Hunt.png" />
     <Content Include="Images\Repeat.png" />
     <Content Include="Images\Target.png" />
-    <Content Include="Images\Unity.exe" />
+    <Content Include="myjs.js" />
     <Content Include="OpenSans-Regular-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\battleship.jpg" />
@@ -143,6 +141,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

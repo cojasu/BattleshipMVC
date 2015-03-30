@@ -1,17 +1,39 @@
 ﻿@model BattleshipMVC.Models.Battleship
 
+@{
+    var game = Session["gameSession"] as BattleshipMVC.Models.Battleship;
+    
+}
 <div class="row">
     <div class="col-lg-8">
-        @using (Html.BeginForm())
+
+        @{
+            for (int i = 0; i < 10; i++){
+                <p>
+                @for(int j = 0; j < 10; j++){
+                 @game.playerUpBoard[i,j].ToString() 
+                } 
+                     </p>
+            }
+        }
+        @using (Html.BeginForm("Target", "Home", FormMethod.Post, new { id = "gameForm" }))
         { 
+            
             <h2>Make your moves here.</h2>
             <table>
-                @for (int i = 1; i < 11; i++)
+                @for (int i = 0; i < 10; i++)
                 {
                     <tr>
-                       @for (int j = 1; j < 11; j++)
+                       @for (int j = 0; j < 10; j++)
                        {
-                            <td><input type="button" name="button" value="@i @j" /></td>
+                           if (game.playerUpBoard[i, j] == 0)
+                           {
+                                <td><button name="target" type="submit" class="blue" id="button" value="@(i.ToString() + " " + j.ToString())" /></td>
+                           }
+                           if (game.playerUpBoard[i, j] == 1)
+                           {
+                                <td><button name="target" type="submit" class="red" disabled id="clickedButton" value="@(i.ToString() + " " + j.ToString())" /></td>
+                           }
                        }
                     </tr>
                 }
@@ -39,7 +61,7 @@
                     <tr>
                        @for (int j = 1; j < 11; j++)
                        {
-                            <td><input type="button" name="button" value="@i @j" disabled="disabled"/></td>
+                            <td><button type="submit" name="button" value="@i @j" disabled="disabled"/></td>
                        }
                     </tr>
                 }
