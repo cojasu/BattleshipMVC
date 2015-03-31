@@ -112,8 +112,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AI.cs" />
     <Compile Include="Models\Battleship.cs" />
+    <Compile Include="Models\Board.cs" />
+    <Compile Include="Models\Computer.cs" />
     <Compile Include="Models\Coordinate.cs" />
+    <Compile Include="Models\LowerScreen.cs" />
+    <Compile Include="Models\Player.cs" />
+    <Compile Include="Models\Ship.cs" />
+    <Compile Include="Models\UpperScreen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

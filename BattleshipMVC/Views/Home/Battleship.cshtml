@@ -6,16 +6,6 @@
 }
 <div class="row">
     <div class="col-lg-8">
-
-        @{
-            for (int i = 0; i < 10; i++){
-                <p>
-                @for(int j = 0; j < 10; j++){
-                 @game.playerUpBoard[i,j].ToString() 
-                } 
-                     </p>
-            }
-        }
         @using (Html.BeginForm("Target", "Home", FormMethod.Post, new { id = "gameForm" }))
         { 
             
@@ -26,13 +16,20 @@
                     <tr>
                        @for (int j = 0; j < 10; j++)
                        {
-                           if (game.playerUpBoard[i, j] == 0)
+                            if (game.player.board.upScreen.screen[i, j].content == "#")
                            {
                                 <td><button name="target" type="submit" class="blue" id="button" value="@(i.ToString() + " " + j.ToString())" /></td>
                            }
-                           if (game.playerUpBoard[i, j] == 1)
+                           else if (game.player.board.upScreen.screen[i, j].content == "H")
                            {
-                                <td><button name="target" type="submit" class="red" disabled id="clickedButton" value="@(i.ToString() + " " + j.ToString())" /></td>
+                                <td><button name="target" type="submit" class="red" disabled value="@(i.ToString() + " " + j.ToString())" /></td>
+                           }
+                           else if (game.player.board.upScreen.screen[i, j].content == "M")
+                           {
+                               <td><button name="target" type="submit" class="white" disabled value="@(i.ToString() + " " + j.ToString())" /></td>
+                           }
+                           else{
+                             <td><button name="target" type="submit" class="blue" value="@(i.ToString() + " " + j.ToString())" /></td>                               
                            }
                        }
                     </tr>
@@ -43,10 +40,10 @@
     <div class="col-lg-2">
         <p>List of ships you've sunk</p>
         <ul>
-        @for (int i = 0; i < 5; i++)
+        @foreach (BattleshipMVC.Models.Ship ship in game.computer.board.lowScreen.getListofDeadShips())
         {
             <li>
-                Test Ship: @i
+                @ship.type;
             </li>
         }
             </ul>
@@ -56,12 +53,43 @@
         { 
             <h2>Your status:</h2>
             <table>
-                @for (int i = 1; i < 11; i++)
+                @for (int i = 0; i < 10; i++)
                 {
                     <tr>
-                       @for (int j = 1; j < 11; j++)
+                       @for (int j = 0; j < 10; j++)
                        {
-                            <td><button type="submit" name="button" value="@i @j" disabled="disabled"/></td>
+                           if (game.player.board.lowScreen.screen[i, j].content == "c")
+                           {
+                                <td><button name="target" type="submit" disabled class="purple" value="@(i.ToString() + " " + j.ToString())"> @game.computer.board.upScreen.heatmap[i, j].count.ToString() </button></td>
+                           }
+                           else if (game.player.board.lowScreen.screen[i, j].content == "b")
+                           {
+                                <td><button name="target" type="submit" disabled class="orange" value="@(i.ToString() + " " + j.ToString())"> @game.computer.board.upScreen.heatmap[i, j].count.ToString() </button></td>
+                           }
+                           else if (game.player.board.lowScreen.screen[i, j].content == "s")
+                           {
+                                <td><button name="target" type="submit" disabled class="green" value="@(i.ToString() + " " + j.ToString())"> @game.computer.board.upScreen.heatmap[i, j].count.ToString() </button></td>
+                           }
+                           else if (game.player.board.lowScreen.screen[i, j].content == "d")
+                           {
+                                <td><button name="target" type="submit" disabled class="black" value="@(i.ToString() + " " + j.ToString())"> @game.computer.board.upScreen.heatmap[i, j].count.ToString() </button></td>
+                           }
+                           else if (game.player.board.lowScreen.screen[i, j].content == "o")
+                           {
+                                <td><button name="target" type="submit" disabled class="grey" value="@(i.ToString() + " " + j.ToString())"> @game.computer.board.upScreen.heatmap[i, j].count.ToString() </button></td>
+                           }
+                           else if (game.player.board.lowScreen.screen[i, j].content == "H")
+                           {
+                                <td><button name="target" type="submit" disabled class="red" value="@(i.ToString() + " " + j.ToString())"> @game.computer.board.upScreen.heatmap[i, j].count.ToString() </button></td>
+                           }
+                           else if (game.player.board.lowScreen.screen[i, j].content == "M")
+                           {
+                                <td><button name="target" type="submit" disabled class="white" value="@(i.ToString() + " " + j.ToString())"> @game.computer.board.upScreen.heatmap[i, j].count.ToString() </button></td>
+                           }
+                           else if (game.player.board.lowScreen.screen[i, j].content == "#")
+                           {
+                                <td><button name="target" type="submit" disabled class="blue" value="@(i.ToString() + " " + j.ToString())"> @game.computer.board.upScreen.heatmap[i, j].count.ToString() </button></td>
+                           }
                        }
                     </tr>
                 }
@@ -70,11 +98,12 @@
         </div>
     <div class="col-lg-2">
         <p>List of your sunk ships:</p>
-        <ul>
-        @for (int i = 0; i < 5; i++)
+
+                <ul>
+        @foreach (BattleshipMVC.Models.Ship ship in game.player.board.lowScreen.getListofDeadShips())
         {
             <li>
-                Test Ship: @i
+                @ship.type
             </li>
         }
             </ul>

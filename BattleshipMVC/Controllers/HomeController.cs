@@ -26,9 +26,8 @@ namespace BattleshipMVC.Controllers
             string[] coord = target.Split(' ');
             int x = Int32.Parse(coord[0]);
             int y = Int32.Parse(coord[1]);
-            Console.WriteLine(x);
-            Console.WriteLine(y);
-            game.playerUpBoard[x, y] = 1;
+            game.playerTurn(x, y);
+            game.computerTurn();
             Session["gameSession"] = game;
             return View("Index", Session["gameSession"]);
         }

@@ -33,6 +33,26 @@
     background-color: #f00;
 }
 
+.purple {
+    background-color: purple;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.green {
+    background-color: green;
+}
+
+.black {
+    background-color: black;
+}
+
+.grey {
+    background-color: grey;
+}
+
 @media (max-width: 767px) {
  body > div.container > div > div > div.col-lg-8 > form > table > tbody > tr > td > button[type="submit"] {
         width: 50px;

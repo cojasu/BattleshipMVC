@@ -7,22 +7,21 @@ namespace BattleshipMVC.Models
 {
     public class Battleship
     {
-        public int[,] computerUpBoard;
-        public int[,] computerDownBoard;
-        public int[,] playerUpBoard;
-        public int[,] playerDownBoard;
+        public Player player;
+        public Computer computer;
         
         public Battleship()
         {
-            computerUpBoard = new int[10, 10];
-            computerDownBoard = new int[10, 10];
-            playerUpBoard = new int[10, 10];
-            playerDownBoard = new int[10, 10];
-            initializeBoard(computerUpBoard);
-            initializeBoard(computerDownBoard);
-            initializeBoard(playerUpBoard);
-            initializeBoard(playerDownBoard);
-            playerDownBoard[2, 2] = 1;
+            player = new Player();
+            computer = new Computer();
+            updateUpperScreens();
+        }
+
+        public void updateUpperScreens()
+        {
+
+            player.board.upScreen.screen = player.board.upScreen.getUpperScreenFromOpponent(computer.board.lowScreen);
+            computer.board.upScreen.screen = player.board.upScreen.getUpperScreenFromOpponent(player.board.lowScreen);
         }
 
         void initializeBoard(int[,] board){
@@ -33,7 +32,22 @@ namespace BattleshipMVC.Models
                     board[i, j] = 0;
                 }
             }
-            board[2, 2] = 1;
+        }
+
+
+        public void playerTurn(int x, int y)
+        {
+            player.turn(computer.board, new Coordinate(x, y));
+            player.board.upScreen.updateHeatMap(computer.board.lowScreen);
+            player.board.upScreen.listofOpponentsSunkShips = computer.board.lowScreen.getListofDeadShips();
+        }
+
+        public void computerTurn()
+        {
+            computer.board.upScreen.updateHeatMap(player.board.lowScreen);
+            computer.turn(player.board);
+            computer.board.upScreen.listofOpponentsSunkShips = player.board.lowScreen.getListofDeadShips();
+            computer.board.upScreen.updateHeatMap(player.board.lowScreen);
         }
     }
 }
