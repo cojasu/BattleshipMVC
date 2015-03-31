@@ -6,37 +6,46 @@
 }
 <div class="row">
     <div class="col-lg-6">
-        @using (Html.BeginForm("Target", "Home", FormMethod.Post, new { id = "gameForm" }))
+        @using (Html.BeginForm("Target", "Home", FormMethod.Post))
         { 
-            
             <h2>Make your moves here.</h2>
             <table>
                 @for (int i = 0; i < 10; i++)
                 {
                     <tr>
-                       @for (int j = 0; j < 10; j++)
-                       {
+                        @for (int j = 0; j < 10; j++)
+                        {
+
                             if (game.player.board.upScreen.screen[i, j].content == "#")
-                           {
-                                <td><button name="target" type="submit" class="blue" id="button" value="@(i.ToString() + " " + j.ToString())" /></td>
-                           }
-                           else if (game.player.board.upScreen.screen[i, j].content == "H")
-                           {
-                                <td><button name="target" type="submit" class="red" disabled value="@(i.ToString() + " " + j.ToString())" /></td>
-                           }
-                           else if (game.player.board.upScreen.screen[i, j].content == "M")
-                           {
-                               <td><button name="target" type="submit" class="white" disabled value="@(i.ToString() + " " + j.ToString())" /></td>
-                           }
-                           else{
-                             <td><button name="target" type="submit" class="blue" value="@(i.ToString() + " " + j.ToString())" /></td>                               
-                           }
-                       }
+                            {
+                            <td>
+                                <button name="target" type="submit" class="blue" id="button" value="@(i.ToString() + " " + j.ToString())" />
+                            </td>
+                            }
+                            else if (game.player.board.upScreen.screen[i, j].content == "H")
+                            {
+                            <td>
+                                <button name="target" type="submit" class="red" disabled value="@(i.ToString() + " " + j.ToString())" />
+                            </td>
+                            }
+                            else if (game.player.board.upScreen.screen[i, j].content == "M")
+                            {
+                            <td>
+                                <button name="target" type="submit" class="white" disabled value="@(i.ToString() + " " + j.ToString())" />
+                            </td>
+                            }
+                            else
+                            {
+                            <td>
+                                <button name="target" type="submit" class="blue" value="@(i.ToString() + " " + j.ToString())" />
+                            </td>                               
+                            }
+                        }
                     </tr>
                 }
             </table>
         }
-        </div>
+    </div>
     <div class="col-lg-6">
         @using (Html.BeginForm())
         { 
@@ -45,69 +54,113 @@
                 @for (int i = 0; i < 10; i++)
                 {
                     <tr>
-                       @for (int j = 0; j < 10; j++)
-                       {
-                           if (game.player.board.lowScreen.screen[i, j].content == "c")
-                           {
-                                <td><button name="target" type="submit" disabled class="purple" value="@(i.ToString() + " " + j.ToString())"> @game.computer.board.upScreen.heatmap[i, j].count.ToString() </button></td>
-                           }
-                           else if (game.player.board.lowScreen.screen[i, j].content == "b")
-                           {
-                                <td><button name="target" type="submit" disabled class="orange" value="@(i.ToString() + " " + j.ToString())"> @game.computer.board.upScreen.heatmap[i, j].count.ToString() </button></td>
-                           }
-                           else if (game.player.board.lowScreen.screen[i, j].content == "s")
-                           {
-                                <td><button name="target" type="submit" disabled class="green" value="@(i.ToString() + " " + j.ToString())"> @game.computer.board.upScreen.heatmap[i, j].count.ToString() </button></td>
-                           }
-                           else if (game.player.board.lowScreen.screen[i, j].content == "d")
-                           {
-                                <td><button name="target" type="submit" disabled class="black" value="@(i.ToString() + " " + j.ToString())"> @game.computer.board.upScreen.heatmap[i, j].count.ToString() </button></td>
-                           }
-                           else if (game.player.board.lowScreen.screen[i, j].content == "o")
-                           {
-                                <td><button name="target" type="submit" disabled class="grey" value="@(i.ToString() + " " + j.ToString())"> @game.computer.board.upScreen.heatmap[i, j].count.ToString() </button></td>
-                           }
-                           else if (game.player.board.lowScreen.screen[i, j].content == "H")
-                           {
-                                <td><button name="target" type="submit" disabled class="red" value="@(i.ToString() + " " + j.ToString())"> @game.computer.board.upScreen.heatmap[i, j].count.ToString() </button></td>
-                           }
-                           else if (game.player.board.lowScreen.screen[i, j].content == "M")
-                           {
-                                <td><button name="target" type="submit" disabled class="white" value="@(i.ToString() + " " + j.ToString())"> @game.computer.board.upScreen.heatmap[i, j].count.ToString() </button></td>
-                           }
-                           else if (game.player.board.lowScreen.screen[i, j].content == "#")
-                           {
-                                <td><button name="target" type="submit" disabled class="blue" value="@(i.ToString() + " " + j.ToString())"> @game.computer.board.upScreen.heatmap[i, j].count.ToString() </button></td>
-                           }
-                       }
+                        @for (int j = 0; j < 10; j++)
+                        {
+                            if (game.player.board.lowScreen.screen[i, j].content == "c")
+                            {
+                            <td>
+                                <button name="target" type="submit" disabled class="purple" value="@(i.ToString() + " " + j.ToString())"></button>
+                            </td>
+                            }
+                            else if (game.player.board.lowScreen.screen[i, j].content == "b")
+                            {
+                            <td>
+                                <button name="target" type="submit" disabled class="orange" value="@(i.ToString() + " " + j.ToString())"></button>
+                            </td>
+                            }
+                            else if (game.player.board.lowScreen.screen[i, j].content == "s")
+                            {
+                            <td>
+                                <button name="target" type="submit" disabled class="green" value="@(i.ToString() + " " + j.ToString())"></button>
+                            </td>
+                            }
+                            else if (game.player.board.lowScreen.screen[i, j].content == "d")
+                            {
+                            <td>
+                                <button name="target" type="submit" disabled class="black" value="@(i.ToString() + " " + j.ToString())"></button>
+                            </td>
+                            }
+                            else if (game.player.board.lowScreen.screen[i, j].content == "o")
+                            {
+                            <td>
+                                <button name="target" type="submit" disabled class="grey" value="@(i.ToString() + " " + j.ToString())"></button>
+                            </td>
+                            }
+                            else if (game.player.board.lowScreen.screen[i, j].content == "H")
+                            {
+                            <td>
+                                <button name="target" type="submit" disabled class="red" value="@(i.ToString() + " " + j.ToString())"></button>
+                            </td>
+                            }
+                            else if (game.player.board.lowScreen.screen[i, j].content == "M")
+                            {
+                            <td>
+                                <button name="target" type="submit" disabled class="white" value="@(i.ToString() + " " + j.ToString())"></button>
+                            </td>
+                            }
+                            else if (game.player.board.lowScreen.screen[i, j].content == "#")
+                            {
+                            <td>
+                                <button name="target" type="submit" disabled class="blue" value="@(i.ToString() + " " + j.ToString())"></button>
+                            </td>
+                            }
+                        }
                     </tr>
                 }
             </table>
         }
     </div>
     <div class="row">
-    <div class="col-lg-6">
-        <p>List of ships you've sunk</p>
-        <ul>
-        @foreach (BattleshipMVC.Models.Ship ship in game.computer.board.lowScreen.getListofDeadShips())
-        {
-            <li>
-                @ship.type;
-            </li>
-        }
+        <div class="col-lg-6">
+            <p>List of ships you've sunk</p>
+            <ul>
+                @foreach (BattleshipMVC.Models.Ship ship in game.computer.board.lowScreen.Ships)
+                {
+                    bool isDead = false;
+                    foreach (BattleshipMVC.Models.Ship deadShip in game.computer.board.lowScreen.getListofDeadShips())
+                    {
+                        if (ship.type == deadShip.type)
+                        {
+                            isDead = true;
+                            break;
+                        }
+                    }
+                    if (isDead)
+                    {
+                    <li class="red">@ship.name @ship.length</li>
+                    }
+                    else
+                    {
+                    <li>@ship.name @ship.length</li> 
+                    }
+                }
             </ul>
-    </div>
-    <div class="col-lg-6">
-        <p>List of your sunk ships:</p>
-
-                <ul>
-        @foreach (BattleshipMVC.Models.Ship ship in game.player.board.lowScreen.getListofDeadShips())
-        {
-            <li>
-                @ship.type
-            </li>
-        }
-            </ul>
-    </div>
         </div>
+        <div class="col-lg-6">
+            <p>List of your sunk ships:</p>
+
+            <ul>
+                @foreach (BattleshipMVC.Models.Ship ship in game.player.board.lowScreen.Ships)
+                {
+                    bool isDead = false;
+                    foreach (BattleshipMVC.Models.Ship deadShip in game.player.board.lowScreen.getListofDeadShips())
+                    {
+                        if (ship.type == deadShip.type)
+                        {
+                            isDead = true;
+                            break;
+                        }
+                    }
+                    if (isDead)
+                    {
+                    <li class="red">@ship.name @ship.length</li>
+                    }
+                    else
+                    {
+                    <li>@ship.name @ship.length</li> 
+                    }
+                }
+            </ul>
+        </div>
+    </div>
 </div>

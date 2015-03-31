@@ -19,12 +19,11 @@ namespace BattleshipMVC.Models
                     screen[i, j] = new Coordinate(i, j);
                 }
             }
-            Ship boat = new Ship(2, "o");
             Ship carrier = new Ship(5, "c");
             Ship battleship = new Ship(4, "b");
             Ship submarine = new Ship(3, "s");
             Ship destroyer = new Ship(3, "d");
-
+            Ship boat = new Ship(2, "o");
 
             Ships.Add(carrier);
             Ships.Add(battleship);
