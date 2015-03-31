@@ -6,7 +6,7 @@
 }
 <div class="row">
     <div class="col-lg-6">
-        @using (Html.BeginForm("Target", "Home", FormMethod.Post))
+        @using (Ajax.BeginForm("Target", new AjaxOptions { UpdateTargetId = "myGame" }))
         { 
             <h2>Make your moves here.</h2>
             <table>

@@ -19,7 +19,6 @@ namespace BattleshipMVC.Controllers
             return View("Index", Session["gameSession"]);
         }
 
-        [HttpPost]
         public ActionResult Target(string target)
         {
             game = Session["gameSession"] as Battleship;
@@ -29,7 +28,7 @@ namespace BattleshipMVC.Controllers
             game.playerTurn(x, y);
             game.computerTurn();
             Session["gameSession"] = game;
-            return View("Index", Session["gameSession"]);
+            return PartialView("Battleship", Session["gameSession"]);
         }
     }
 }

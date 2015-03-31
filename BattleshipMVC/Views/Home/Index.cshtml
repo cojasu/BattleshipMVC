@@ -19,6 +19,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="~/style.css" />
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <script src="~/Scripts/jquery.validate.min.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+        <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
 </head>
 <body>
     <!-- NAVIGATION -->
@@ -54,7 +59,7 @@
     <a name="play"></a>
     <div class="container scrolling">
         <div class="game" id="myGame">
-            @Html.Partial("Battleship", game)
+            @{Html.RenderPartial("Battleship", game);}
         </div>
     </div>
 
@@ -128,7 +133,6 @@
     <footer class="scrolling">
         <span class="footer-Text">Created by Cory Sutyak</span>
     </footer>
-    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>
