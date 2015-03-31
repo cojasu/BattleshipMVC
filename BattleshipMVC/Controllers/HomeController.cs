@@ -27,8 +27,19 @@ namespace BattleshipMVC.Controllers
             int y = Int32.Parse(coord[1]);
             game.playerTurn(x, y);
             game.computerTurn();
-            Session["gameSession"] = game;
-            return PartialView("Battleship", Session["gameSession"]);
+            if (game.player.CheckWin(game.computer.board.lowScreen.Ships))
+            {
+                return PartialView("gameOver", "Win");
+            }
+            else if (game.computer.CheckWin(game.player.board.lowScreen.Ships))
+            {
+                return PartialView("gameOver", "Lose");
+            }
+            else
+            {
+                Session["gameSession"] = game;
+                return PartialView("Battleship", Session["gameSession"]);
+            }
         }
     }
 }
