@@ -5,7 +5,7 @@
     
 }
 <div class="row">
-    <div class="col-lg-8">
+    <div class="col-lg-6">
         @using (Html.BeginForm("Target", "Home", FormMethod.Post, new { id = "gameForm" }))
         { 
             
@@ -37,18 +37,7 @@
             </table>
         }
         </div>
-    <div class="col-lg-2">
-        <p>List of ships you've sunk</p>
-        <ul>
-        @foreach (BattleshipMVC.Models.Ship ship in game.computer.board.lowScreen.getListofDeadShips())
-        {
-            <li>
-                @ship.type;
-            </li>
-        }
-            </ul>
-    </div>
-   <div class="col-lg-8">
+    <div class="col-lg-6">
         @using (Html.BeginForm())
         { 
             <h2>Your status:</h2>
@@ -95,8 +84,20 @@
                 }
             </table>
         }
-        </div>
-    <div class="col-lg-2">
+    </div>
+    <div class="row">
+    <div class="col-lg-6">
+        <p>List of ships you've sunk</p>
+        <ul>
+        @foreach (BattleshipMVC.Models.Ship ship in game.computer.board.lowScreen.getListofDeadShips())
+        {
+            <li>
+                @ship.type;
+            </li>
+        }
+            </ul>
+    </div>
+    <div class="col-lg-6">
         <p>List of your sunk ships:</p>
 
                 <ul>
@@ -108,4 +109,5 @@
         }
             </ul>
     </div>
+        </div>
 </div>
