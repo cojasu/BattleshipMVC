@@ -5,6 +5,7 @@
     
 }
 <div class="row">
+    <p class="text-center">Turn: @game.turnCounter</p>
     <div class="col-lg-6">
         <h2>Make your moves here.</h2>
         @using (Ajax.BeginForm("Target", new AjaxOptions { UpdateTargetId = "myGame" }))
@@ -113,8 +114,7 @@
     </div>
     <div class="row">
         <div class="col-lg-6">
-            <p>List of ships you've sunk</p>
-            <ul>
+            <ul class="list">
                 @foreach (BattleshipMVC.Models.Ship ship in game.computer.board.lowScreen.Ships)
                 {
                     bool isDead = false;
@@ -128,19 +128,17 @@
                     }
                     if (isDead)
                     {
-                    <li class="red">@ship.name @ship.length</li>
+                    <li class="red ship-list dead">@ship.name @ship.length</li>
                     }
                     else
                     {
-                    <li>@ship.name @ship.length</li> 
+                    <li class="ship-list">@ship.name @ship.length</li> 
                     }
                 }
             </ul>
         </div>
         <div class="col-lg-6">
-            <p>List of your sunk ships:</p>
-
-            <ul>
+            <ul class="list">
                 @foreach (BattleshipMVC.Models.Ship ship in game.player.board.lowScreen.Ships)
                 {
                     bool isDead = false;
@@ -154,11 +152,11 @@
                     }
                     if (isDead)
                     {
-                    <li class="red">@ship.name @ship.length</li>
+                    <li class="red ship-list center-text dead">@ship.name @ship.length</li>
                     }
                     else
                     {
-                    <li>@ship.name @ship.length</li> 
+                    <li class="ship-list center-text">@ship.name @ship.length</li> 
                     }
                 }
             </ul>

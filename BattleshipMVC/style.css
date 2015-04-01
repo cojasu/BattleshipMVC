@@ -25,6 +25,9 @@ button {
         padding: 0 0 0 0;
     }
 
+.finish {
+    font-size: 4em;
+}
 .blue {
         background-color: #657dcb;
 }
@@ -53,17 +56,27 @@ button {
     background-color: grey;
 }
 
-@media (max-width: 767px) {
- body > div.container > div > div > div.col-lg-8 > form > table > tbody > tr > td > button[type="submit"] {
-        width: 50px;
-        height: 50px;
-    }
+.ship-list {
+    list-style: none;
+    font-size: 1.4em;
+    display: inline;
 }
 
+.dead {
+    color: white;
+
+}
+
+.list {
+}
 @media (max-width: 480px) {
- body > div.container > div > div > div.col-lg-8 > form > table > tbody > tr > td > button[type="submit"] {
-        width: 30px;
-        height: 30px;
+    .ship-list {
+        width: 100%;
+    }
+
+button {
+        width: 25px;
+        height: 25px;
     }
 }
 .quote > ul {
@@ -83,19 +96,6 @@ p{
     max-width: 50%;
 }
 
-.center {
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-
-.header-center {
-    display:block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
 .quote img {
     float: left;
     border: 5px solid #657dcb;

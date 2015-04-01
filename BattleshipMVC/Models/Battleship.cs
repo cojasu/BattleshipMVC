@@ -9,12 +9,14 @@ namespace BattleshipMVC.Models
     {
         public Player player;
         public Computer computer;
-        
+        public int turnCounter;
+        public string winner;
         public Battleship()
         {
             player = new Player();
             computer = new Computer();
             updateUpperScreens();
+            turnCounter = 0;
         }
 
         public void updateUpperScreens()
@@ -40,6 +42,7 @@ namespace BattleshipMVC.Models
             player.turn(computer.board, new Coordinate(x, y));
             player.board.upScreen.updateHeatMap(computer.board.lowScreen);
             player.board.upScreen.listofOpponentsSunkShips = computer.board.lowScreen.getListofDeadShips();
+            turnCounter++;
         }
 
         public void computerTurn()

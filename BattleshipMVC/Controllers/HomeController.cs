@@ -29,11 +29,13 @@ namespace BattleshipMVC.Controllers
             game.computerTurn();
             if (game.player.CheckWin(game.computer.board.lowScreen.Ships))
             {
-                return PartialView("gameOver", "Win");
+                game.winner = "Player";
+                return PartialView("gameOver", Session["gameSession"] = game);
             }
             else if (game.computer.CheckWin(game.player.board.lowScreen.Ships))
             {
-                return PartialView("gameOver", "Lose");
+                game.winner = "Computer";
+                return PartialView("gameOver", Session["gameSession"] = game);
             }
             else
             {
