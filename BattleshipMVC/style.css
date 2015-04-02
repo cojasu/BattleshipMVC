@@ -111,6 +111,9 @@ p{
 }
 
 @media (max-width: 767px) {
+    .mediumPic {
+        max-width: 50px;
+    }
     .quote {
         text-align: center;
     }
