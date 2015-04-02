@@ -14,7 +14,16 @@
     font-style: normal;
 
 }
+#howto {
+    display: none;
+    background: #acacac;
+    color: white;
+    padding: 10px;
+}
 
+.mediumPic {
+    max-width: 100px;
+}
 .game {
     padding-bottom: 50px;
     padding-top: 20px;
@@ -86,10 +95,6 @@ button {
 
 p{
     font-size: 1.5em;
-}
-
-.grey {
-    background:#bdc3c7;
 }
 
 .algorithm-icon {

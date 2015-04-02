@@ -127,6 +127,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Images\arrowDown.png" />
+    <Content Include="Images\arrowUp.png" />
     <Content Include="Images\battleship2.jpg" />
     <Content Include="Images\Hunt.png" />
     <Content Include="Images\Repeat.png" />
