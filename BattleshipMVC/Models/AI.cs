@@ -7,7 +7,6 @@ namespace BattleshipMVC.Models
 {
     public class AI
     {
-        //variables for hunting and targetting
         public AI()
         {
 
